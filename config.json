@@ -1,0 +1,110 @@
+{
+  "trading": {
+    "symbol": "XAUUSDm",
+    "signal_threshold": 0.70,
+    "max_daily_signals": 20,
+    "risk_per_trade": 0.02,
+    "timeframes": ["M1", "M5", "M15", "H1"]
+  },
+  
+  "risk_management": {
+    "max_drawdown_percent": 10.0,
+    "equity_stop_percent": 5.0,
+    "stop_loss": {
+      "default_points": 200,
+      "use_atr_multiplier": true,
+      "atr_multiplier": 2.0
+    },
+    "take_profit": {
+      "default_points": 400,
+      "risk_reward_ratio": 2.0
+    },
+    "trailing_stop": {
+      "enabled": true,
+      "start_points": 100,
+      "step_points": 50
+    }
+  },
+  
+  "trading_schedule": {
+    "start_hour": 0,
+    "end_hour": 23,
+    "weekdays_only": true,
+    "avoid_news_hours": [
+      {"start": "08:30", "end": "09:30"},
+      {"start": "13:30", "end": "14:30"}
+    ]
+  },
+  
+  "model": {
+    "retrain_interval_hours": 24,
+    "min_confidence_threshold": 0.65,
+    "anomaly_detection_threshold": 0.1,
+    "feature_importance_threshold": 0.01
+  },
+  
+  "paths": {
+    "models_dir": "models",
+    "signals_dir": "signals",
+    "logs_dir": "logs",
+    "data_dir": "data",
+    "xgboost_model": "models/xgboost_model.json",
+    "scaler_model": "models/scaler.pkl",
+    "anomaly_detector": "models/anomaly_detector.pkl",
+    "signal_file": "signals/xau_signal.txt"
+  },
+  
+  "mt5": {
+    "timeout": 60000,
+    "deviation": 10,
+    "magic_number": 234000,
+    "comment": "AI_Scalper_Pro",
+    "server": "",
+    "login": 0,
+    "password": ""
+  },
+  
+  "logging": {
+    "level": "INFO",
+    "max_file_size_mb": 10,
+    "backup_count": 5,
+    "console_output": true
+  },
+  
+  "features": {
+    "technical_indicators": {
+      "sma_periods": [20, 50],
+      "ema_periods": [12, 26],
+      "rsi_period": 14,
+      "macd_fast": 12,
+      "macd_slow": 26,
+      "macd_signal": 9,
+      "bb_period": 20,
+      "bb_deviation": 2,
+      "stoch_k": 14,
+      "stoch_d": 3,
+      "atr_period": 14
+    },
+    "lookback_periods": {
+      "short": 20,
+      "medium": 50,
+      "long": 200
+    }
+  },
+  
+  "monitoring": {
+    "update_interval_seconds": 5,
+    "web_dashboard_port": 5000,
+    "enable_telegram": false,
+    "telegram_bot_token": "",
+    "telegram_chat_id": ""
+  },
+  
+  "backtesting": {
+    "initial_balance": 10000,
+    "commission": 0.0003,
+    "slippage_points": 2,
+    "start_date": "2024-01-01",
+    "end_date": "2024-12-31"
+  }
+}
