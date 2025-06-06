@@ -20,7 +20,7 @@
     "trend_sma",
     "trend_ema"
   ],
-  "training_date": "2025-06-04T13:18:18.233221",
-  "accuracy": 0.7920642893018583,
+  "training_date": "2025-06-06T22:52:15.251926",
+  "accuracy": 0.789552988448016,
   "n_samples": 9951
 }

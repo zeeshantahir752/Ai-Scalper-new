@@ -1,0 +1,7 @@
+{
+  "training_date": "2025-06-06T23:05:46.753312",
+  "model_type": "XGBoost",
+  "n_features": 42,
+  "symbol": "XAUUSDm",
+  "version": "2.0"
+}
